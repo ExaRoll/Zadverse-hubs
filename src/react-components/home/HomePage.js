@@ -54,11 +54,17 @@ export function HomePage() {
   const canCreateRooms = !configs.feature("disable_room_creation") || auth.isAdmin;
   const email = auth.email;
   return (
+    // THE MAIN CONTAINER OF THE PAGE
     <PageContainer className={styles.homePage}>
+      {/* after header is here */}
+
+      {/* THE CONTAIER IS THE MIDDILE HERE */}
+
       <Container>
         <div className={styles.hero}>
           {auth.isSignedIn ? (
             <div className={styles.signInContainer}>
+              {/* email sgin in magic link */}
               <span>
                 <FormattedMessage
                   id="header.signed-in-as"
@@ -73,15 +79,21 @@ export function HomePage() {
           ) : (
             <SignInButton mobile />
           )}
+
+          {/* THIS IS THE LOGO CONTAINER */}
           <div className={styles.logoContainer}>
             <AppLogo />
           </div>
-          <div className={styles.appInfo}>
+
+          {/* THIS IS THE APP DESCRIPTION */}
+          {/* <div className={styles.appInfo}>
             <div className={styles.appDescription}>{configs.translation("app-description")}</div>
             {canCreateRooms && <CreateRoomButton />}
             <PWAButton />
-          </div>
-          <div className={styles.heroImageContainer}>
+          </div> */}
+
+          {/* THIS IS THE IMAGE IN HOME SCREEN */}
+          {/* <div className={styles.heroImageContainer}>
             <img
               alt={intl.formatMessage(
                 {
@@ -92,10 +104,13 @@ export function HomePage() {
               )}
               src={configs.image("home_background")}
             />
-          </div>
+          </div> */}
         </div>
       </Container>
-      {configs.feature("show_feature_panels") && (
+
+      {/* After Middle banner and the title of the website */}
+
+      {/*       {configs.feature("show_feature_panels") && (
         <Container className={classNames(styles.features, styles.colLg, styles.centerLg)}>
           <Column padding gap="xl" className={styles.card}>
             <img src={configs.image("landing_rooms_thumb")} />
@@ -105,7 +120,7 @@ export function HomePage() {
             <p>
               <FormattedMessage
                 id="home-page.rooms-blurb"
-                defaultMessage="Share virtual spaces with your friends, co-workers, and communities. When you create a room with Hubs, you’ll have a private virtual meeting space that you can instantly share <b>- no downloads or VR headset necessary.</b>"
+                defaultMessage="Share virtual spaces with your friends, co-workers, and communities. When you create a room with Zadverse, you’ll have a private virtual meeting space that you can instantly share <b>- no downloads or VR headset necessary.</b>"
                 values={{ b: wrapInBold }}
               />
             </p>
@@ -118,7 +133,7 @@ export function HomePage() {
             <p>
               <FormattedMessage
                 id="home-page.communicate-blurb"
-                defaultMessage="Choose an avatar to represent you, put on your headphones, and jump right in. Hubs makes it easy to stay connected with voice and text chat to other people in your private room."
+                defaultMessage="Choose an avatar to represent you, put on your headphones, and jump right in. Zadverse makes it easy to stay connected with voice and text chat to other people in your private room."
               />
             </p>
           </Column>
@@ -179,19 +194,51 @@ export function HomePage() {
             </MediaGrid>
           </Column>
         </Container>
-      )}
-      <Container>
+      )} */}
+
+      {/* HAVE A ROOM CODE AREA */}
+      {/* <Container>
         <Column center grow>
           <Button thin preset="landing" as="a" href="/link">
             <FormattedMessage id="home-page.have-code" defaultMessage="Have a room code?" />
           </Button>
         </Column>
-      </Container>
+      </Container> 
       {isHmc() ? (
         <Column center>
           <SocialBar />
         </Column>
       ) : null}
+      */}
+
+      {/* ZAD HEADER STARTS HERE */}
+      <Container>INTRO</Container>
+      {/* ZAD SERVICES STARTS HERE */}
+      <Container>SERVICES</Container>
+      {/* ZAD APPLECATIONS STARTS HERE */}
+      <Container>APPLECATIONS</Container>
+      {/* ZAD FEATURES STARTS HERE */}
+      <Container>FEATURES</Container>
+      {/* ZAD SUPPORT STARTS HERE */}
+      <Container>SUPPORTED DEVICES</Container>
+      {/* ZAD CONTACT STARTS HERE */}
+      <Container>CONTACT</Container>
+      {/* ZAD FOOTER STARTS HERE */}
+      <Container>
+        <article id="wrap">
+          <article id="lightings">
+            <section id="one">
+              <section id="two">
+                <section id="three">
+                  <section id="four">
+                    <section id="five" />
+                  </section>
+                </section>
+              </section>
+            </section>
+          </article>
+        </article>
+      </Container>
     </PageContainer>
   );
 }
